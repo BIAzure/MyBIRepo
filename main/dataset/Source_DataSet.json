@@ -5,13 +5,20 @@
 			"referenceName": "AzureBlobStorageLinkedservics",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"DataSet_Pra": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "Pune_Today.csv",
-				"container": "sourcelogs"
+				"container": {
+					"value": "@dataset().DataSet_Pra",
+					"type": "Expression"
+				}
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
