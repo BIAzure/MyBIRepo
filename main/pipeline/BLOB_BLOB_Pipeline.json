@@ -50,7 +50,13 @@
 				"inputs": [
 					{
 						"referenceName": "Source_DataSet",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"DataSet_Pra": {
+								"value": "@pipeline().parameters.Pipeline_Para",
+								"type": "Expression"
+							}
+						}
 					}
 				],
 				"outputs": [
@@ -77,6 +83,11 @@
 				}
 			}
 		],
+		"parameters": {
+			"Pipeline_Para": {
+				"type": "string"
+			}
+		},
 		"annotations": []
 	}
 }
